@@ -1,5 +1,11 @@
+using System.Globalization;
+using DonovanColemanProject1.View;
+
 namespace DonovanColemanProject1
 {
+    /// <summary>
+    /// Entry point for the Car Lot Manager application.
+    /// </summary>
     internal static class Program
     {
         /// <summary>
@@ -8,10 +14,16 @@ namespace DonovanColemanProject1
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            // Use U.S. formatting so money always displays like $15,124.56,
+            // no matter what region the computer is set to.
+            CultureInfo usCulture = CultureInfo.GetCultureInfo("en-US");
+            CultureInfo.DefaultThreadCurrentCulture = usCulture;
+            CultureInfo.DefaultThreadCurrentUICulture = usCulture;
+            CultureInfo.CurrentCulture = usCulture;
+            CultureInfo.CurrentUICulture = usCulture;
+
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new CarLotForm());
         }
     }
 }
