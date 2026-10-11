@@ -135,6 +135,98 @@
             return Math.Round(totalCost, 2, MidpointRounding.AwayFromZero);
         }
         /// <summary>
+        /// Finds the least expensive car in the inventory.
+        /// </summary>
+        /// <returns>The cheapest car, or null if the inventory is empty.</returns>
+        public Car? FindLeastExpensiveCar()
+        {
+            if (inventory.Count == 0)
+            {
+                return null;
+            }
+
+            Car leastExpensiveCar = inventory[0];
+
+            foreach (Car car in inventory)
+            {
+                if (car.Price < leastExpensiveCar.Price)
+                {
+                    leastExpensiveCar = car;
+                }
+            }
+
+            return leastExpensiveCar;
+        }
+        /// <summary>
+        /// Finds the most expensive car in the inventory.
+        /// </summary>
+        /// <returns>The most expensive car, or null if the inventory is empty.</returns>
+        public Car? FindMostExpensiveCar()
+        {
+            if (inventory.Count == 0)
+            {
+                return null;
+            }
+
+            Car mostExpensiveCar = inventory[0];
+
+            foreach (Car car in inventory)
+            {
+                if (car.Price > mostExpensiveCar.Price)
+                {
+                    mostExpensiveCar = car;
+                }
+            }
+
+            return mostExpensiveCar;
+        }
+        /// <summary>
+        /// Finds the car with the best (highest) MPG in the inventory.
+        /// </summary>
+        /// <returns>The car with the best MPG, or null if the inventory is empty.</returns>
+        public Car? FindBestMPGCar()
+        {
+            if (inventory.Count == 0)
+            {
+                return null;
+            }
+
+            Car bestMpgCar = inventory[0];
+
+            foreach (Car car in inventory)
+            {
+                if (car.Mpg > bestMpgCar.Mpg)
+                {
+                    bestMpgCar = car;
+                }
+            }
+
+            return bestMpgCar;
+        }
+        /// <summary>
+        /// Finds the car with the worst (lowest) MPG in the inventory.
+        /// </summary>
+        /// <returns>The car with the worst MPG, or null if the inventory is empty.</returns>
+        public Car? FindWorstMPG()
+        {
+            if (inventory.Count == 0)
+            {
+                return null;
+            }
+
+            Car worstMpgCar = inventory[0];
+
+            foreach (Car car in inventory)
+            {
+                if (car.Mpg < worstMpgCar.Mpg)
+                {
+                    worstMpgCar = car;
+                }
+            }
+
+            return worstMpgCar;
+        }
+        /// <summary>
         /// Adds the four default cars to the inventory.
         /// </summary>
         private void StockLotWithDefaultInventory()
