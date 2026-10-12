@@ -1,0 +1,23 @@
+Donovan Coleman - Comp 3300 Project 1 (Car Lot Manager)
+
+Known bugs / missing functionality:
+No known bugs. All required functionality has been implemented.
+
+Design notes:
+If the inventory contains two cars with the same make AND model, purchasing
+one sells the first matching car in the inventory. This follows the
+required CarLot.PurchaseCar(make, model) signature, which identifies a
+car by make and model only.
+
+Shopper has one extra read-only property, PurchasedCars, so the UI can
+display the shopper's purchased cars (extra credit 2) without being able
+to modify the shopper's private list.
+
+Extra credit attempted:
+Extra Credit 1 (attempted): Filter the inventory list box by make using the
+"Filter by make" text box and the Find button (or Inventory > Find Cars by
+Make). A message is shown if no cars of that make exist. Cars can still be
+selected and purchased while filtered. The Show All button (or Inventory >
+Show All Cars) resets the list box to the full inventory.
+Extra Credit 2 (attempted): The "Cars purchased" list box in the Shopper
+section shows every car the current shopper has purchased.
